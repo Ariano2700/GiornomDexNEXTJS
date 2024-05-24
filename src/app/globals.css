@@ -2,32 +2,258 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+#labelLetters span {
+  position: absolute;
+  top: 0px;
+  display: block;
+  transition: 0.2s;
+  pointer-events: none;
+  font-size: 25px;
+  color: gray;
+  opacity: 0%;
+}
+#pokeinput:focus + #labelLetters span {
+  color: yellow;
+  top: -25px;
+  opacity: 100%;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+#pokeinput:focus + #labelLetters p,
+#pokeinput:valid + #labelLetters p {
+  opacity: 0;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+
+
+
+
+
+
+
+.imgPoke {
+  display: flex;
+  justify-content: center;
+}
+.imgPoke img {
+  width: 60%;
+}
+.rigthContainer {
+  display: flex;
+  flex-direction: column;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+/*ESTILOS DE DATOS*/
+.bgID {
+  font-family: "Montserrat" !important;
+  font-weight: 700;
+  font-size: 6em;
+  opacity: 0.5;
+  color: white;
+}
+
+.namePokemon {
+  font-family: "Montserrat" !important;
+  font-weight: 700;
+  font-size: 4em;
+  color: white;
+}
+
+.statsContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: "Montserrat" !important;
+  font-weight: 700;
+  font-size: 1.5em;
+  color: white;
+}
+.Adate,
+.Pdate,
+.habilidades {
+  font-weight: 200;
+}
+.stat {
+  text-align: center;
+  margin: 0 15px;
+}
+.statTitle {
+  margin: 0;
+}
+.habilidadesStat {
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+}
+
+.containerTypeName {
+  display: flex;
+  align-items: center;
+}
+
+#type_poke {
+  display: flex;
+  flex-direction: column;
+}
+
+#type_poke div {
+  padding: 15px 10px;
+  margin: 0;
+  text-align: center;
+}
+
+.img-type {
+  width: 46px;
+  border-radius: 50px;
+  padding: 10px;
+  -webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  background-size: contain;
+  /* Ajusta el tamaño de la imagen para que encaje en el contenedor */
+}
+
+/*ESTILOS DE DATOS*/
+
+/*COLORES DE FONDO DEPENDIENDO EL TYPE*/
+.normal {
+  background-color: #bfb16e;
+}
+
+.fighting {
+  background-color: #cf5c35;
+}
+
+.flying {
+  background-color: #bea0c2;
+}
+
+.poison {
+  background-color: #b96889;
+}
+
+.ground {
+  background-color: #e6c163;
+}
+
+.rock {
+  background-color: #c9ab40;
+}
+
+.bug {
+  background-color: #bebb30;
+}
+
+.ghost {
+  background-color: #987984;
+}
+
+.steel {
+  background-color: #cabbac;
+}
+
+.fire {
+  background-color: #f2953b;
+}
+
+.water {
+  background-color: #92a0c2;
+}
+
+.grass {
+  background-color: #9dc652;
+}
+
+.electric {
+  background-color: #f7cd3b;
+}
+
+.psychic {
+  background-color: #f77979;
+}
+
+.ice {
+  background-color: #b4d2b1;
+}
+
+.dragon {
+  background-color: #a172bf;
+}
+
+.dark {
+  background-color: #98794c;
+}
+
+.fairy {
+  background-color: #f0a692;
+}
+
+/*///////////////////////////////////////////////////////////////*/
+.caja-padre {
+  width: 40%;
+  min-width: 590px;
+  font-family: "Montserrat" !important;
+}
+.container {
+  width: 100%;
+  padding: 30px 30px 50px;
+  background: transparent;
+  border: 2px solid Orgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+  box-shadow: 0 20px 30px Orgba(0, 0, 0, 0.2);
+  backdrop-filter: blur (10px);
+  color: white;
+}
+.skills:not(:last-child) {
+  margin-bottom: 5px;
+}
+.detalles {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.menu {
+  position: relative;
+  /*border: 1px solid cyan;*/
+  border-radius: 20px;
+}
+.menu div {
+  position: relative;
+  width: 0;
+  height: 30px;
+  border-radius: 9px;
+  background-color: white;
+}
+
+#hp-menu {
+  width: 90%;
+}
+
+#atk-menu {
+  width: 90%;
+}
+
+#def-menu {
+  width: 90%;
+}
+
+#vel-menu {
+  width: 90%;
+}
+
+#satk-menu {
+  width: 90%;
+}
+
+#sdef-menu {
+  width: 90%;
+}
+
+@media (max-width: 1150px) {
+  .subContainerMain {
+    display: flex;
+    flex-direction: column;
   }
 }
