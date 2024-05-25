@@ -20,7 +20,6 @@ export default function Home() {
 
   useEffect(() => {
     const fetchData = async () => {
-      setNewLoading(true);
 
       if (!searchValue) {
         const randomPoke = Math.floor(Math.random() * (807 - 1) + 1);
