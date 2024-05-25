@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 import icon from "../app/favicon.ico";
 import Head from "next/head";
 import { PokemonProvider, usePokemonContext } from "@/context/context";
 
-const poppins = Poppins({ weight: "400", subsets: ["latin"] });
+const montserrat = Montserrat({ weight: ["700", "400"], subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "GiornomDex",
@@ -23,7 +23,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <PokemonProvider>
-        <body className={`${poppins.className}`}>
+        <body className={`${montserrat.className}`}>
           {children}
         </body>
       </PokemonProvider>

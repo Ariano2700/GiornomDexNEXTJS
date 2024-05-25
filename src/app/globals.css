@@ -23,13 +23,6 @@
   opacity: 0;
 }
 
-
-
-
-
-
-
-
 .imgPoke {
   display: flex;
   justify-content: center;
@@ -37,70 +30,6 @@
 .imgPoke img {
   width: 60%;
 }
-.rigthContainer {
-  display: flex;
-  flex-direction: column;
-}
-
-/*ESTILOS DE DATOS*/
-.bgID {
-  font-family: "Montserrat" !important;
-  font-weight: 700;
-  font-size: 6em;
-  opacity: 0.5;
-  color: white;
-}
-
-.namePokemon {
-  font-family: "Montserrat" !important;
-  font-weight: 700;
-  font-size: 4em;
-  color: white;
-}
-
-.statsContainer {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  font-family: "Montserrat" !important;
-  font-weight: 700;
-  font-size: 1.5em;
-  color: white;
-}
-.Adate,
-.Pdate,
-.habilidades {
-  font-weight: 200;
-}
-.stat {
-  text-align: center;
-  margin: 0 15px;
-}
-.statTitle {
-  margin: 0;
-}
-.habilidadesStat {
-  display: inline-block;
-  vertical-align: top;
-  text-align: center;
-}
-
-.containerTypeName {
-  display: flex;
-  align-items: center;
-}
-
-#type_poke {
-  display: flex;
-  flex-direction: column;
-}
-
-#type_poke div {
-  padding: 15px 10px;
-  margin: 0;
-  text-align: center;
-}
-
 .img-type {
   width: 46px;
   border-radius: 50px;
@@ -189,31 +118,6 @@
   background-color: #f0a692;
 }
 
-/*///////////////////////////////////////////////////////////////*/
-.caja-padre {
-  width: 40%;
-  min-width: 590px;
-  font-family: "Montserrat" !important;
-}
-.container {
-  width: 100%;
-  padding: 30px 30px 50px;
-  background: transparent;
-  border: 2px solid Orgba(0, 0, 0, 0.06);
-  border-radius: 10px;
-  box-shadow: 0 20px 30px Orgba(0, 0, 0, 0.2);
-  backdrop-filter: blur (10px);
-  color: white;
-}
-.skills:not(:last-child) {
-  margin-bottom: 5px;
-}
-.detalles {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-}
 .menu {
   position: relative;
   /*border: 1px solid cyan;*/
@@ -227,33 +131,11 @@
   background-color: white;
 }
 
-#hp-menu {
+#hp-menu,
+#attack-menu,
+#defense-menu,
+#special-attack-menu,
+#special-defense-menu,
+#speed-menu {
   width: 90%;
-}
-
-#atk-menu {
-  width: 90%;
-}
-
-#def-menu {
-  width: 90%;
-}
-
-#vel-menu {
-  width: 90%;
-}
-
-#satk-menu {
-  width: 90%;
-}
-
-#sdef-menu {
-  width: 90%;
-}
-
-@media (max-width: 1150px) {
-  .subContainerMain {
-    display: flex;
-    flex-direction: column;
-  }
 }

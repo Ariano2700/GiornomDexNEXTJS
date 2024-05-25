@@ -3,6 +3,14 @@ export type Letter = {
   delay: number;
   left: number;
 };
+export type pokemonContextType = {
+  searchValue: string;
+  setNewSearchValue: (value: string) => void;
+  pokemonType: string;
+  setNewPokemonType: (type: Types) => void;
+  loading: boolean;
+  setNewLoading: (loading: boolean) => void;
+};
 type Ability = {
   ability: {
     name: string;
@@ -40,3 +48,6 @@ export type Pokemon = {
   types: Types[];
   weight: number;
 };
+
+export type handleChangeType = (e: React.ChangeEvent<HTMLInputElement>) => void;
+export type handleSubmitType = (e: React.FormEvent<HTMLFormElement>) => void;

@@ -1,11 +1,7 @@
-'use client'
-import { Types } from "@/app/lib/definitions";
+"use client";
+import { Types, pokemonContextType } from "@/app/lib/definitions";
 import React, { ReactNode, createContext, useContext, useState } from "react";
 
-type pokemonContextType = {
-  pokemonType: string;
-  setNewPokemonType: (type: Types) => void;
-};
 // Crear el contexto
 export const pokemonContext = createContext<pokemonContextType | undefined>(
   undefined
@@ -24,13 +20,24 @@ export const usePokemonContext = () => {
 // Proveedor del contexto
 export const PokemonProvider = ({ children }: { children: ReactNode }) => {
   const [pokemonType, setPokemonType] = useState<string>("");
+  const [searchValue, setSearchValue] = useState<string>("");
+  const [loading, setLoading] = useState<pokemonContextType["loading"]>(true);
 
+  const setNewLoading = (loading: boolean) => {
+    setLoading(loading);
+  } 
   const setNewPokemonType = (type: Types) => {
     setPokemonType(type.type.name);
   };
 
+  const setNewSearchValue = (value: string) => {
+    setSearchValue(value);
+  };
+
   return (
-    <pokemonContext.Provider value={{ pokemonType, setNewPokemonType }}>
+    <pokemonContext.Provider
+      value={{ pokemonType, setNewPokemonType, setNewSearchValue, searchValue, loading, setNewLoading }}
+    >
       {children}
     </pokemonContext.Provider>
   );
