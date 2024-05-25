@@ -12,7 +12,7 @@ export default function Header() {
     e.preventDefault();
     if (searchValue) {
       try {
-        setNewSearchValue(searchValue);
+        setNewSearchValue((searchValue).toLowerCase());
       } catch (error: any) {
         console.error("Error fetching Pokémon data:", error);
       }
